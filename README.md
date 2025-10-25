@@ -37,7 +37,7 @@ Software-Design-and-Architecture/
 ├── ui.py                # Tkinter UI (View)
 ├── controller.py        # MVC Controller
 ├── parking_lot.py       # ParkingLot model + Singleton
-├── vehicle_factory.py   # Factory Pattern implementation
+├── Vehicle.py           # Vehicle instances + Factory Pattern implementation
 ├── fee_strategy.py      # Strategy Pattern (RegularFee, ElectricFee)
 └── README.md            # Project documentation
 ```
