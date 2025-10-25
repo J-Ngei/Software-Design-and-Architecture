@@ -65,7 +65,7 @@ The Tkinter GUI will launch. You can then:
 |----------|----------|----------|
 |MVC |	ui.py, controller.py, parking_lot.py |	Separates user interface, control, and logic layers |
 |Singleton |	parking_lot.py (ParkingLot)	| Ensures one global parking lot instance |
-|Factory |	vehicle_factory.py |	Encapsulates creation of vehicle subclasses |
+|Factory |	Vehicle.py |	Encapsulates creation of vehicle subclasses |
 |Strategy |	fee_strategy.py |	Allows interchangeable fee algorithms for vehicle types |
 
 ### Extensibility
