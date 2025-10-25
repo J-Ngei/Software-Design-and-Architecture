@@ -1,4 +1,4 @@
-from vehicle_factory import VehicleFactory
+from Vehicle import VehicleFactory, VehicleType
 from fee_strategy import RegularFee, ElectricFee
 
 class ParkingLot:
@@ -18,7 +18,18 @@ class ParkingLot:
         self.factory = VehicleFactory()
 
     def park_vehicle(self, regnum, make, model, color, is_electric=False, is_motorcycle=False):
-        vehicle = self.factory.create_vehicle(regnum, make, model, color, is_electric, is_motorcycle)
+        if is_electric:
+            v_type = VehicleType.ELECTRIC_BIKE if is_motorcycle else VehicleType.ELECTRIC_CAR
+        else:
+            v_type = VehicleType.MOTORCYCLE if is_motorcycle else VehicleType.CAR
+
+        vehicle = self.factory.create_vehicle(
+            vehicle_type=v_type,
+            regnum=regnum,
+            make=make,
+            model=model,
+            color=color
+        )
         if is_electric and len(self.ev_slots) < self.ev_capacity:
             self.ev_slots.append(vehicle)
             fee = ElectricFee().calculate_fee()
